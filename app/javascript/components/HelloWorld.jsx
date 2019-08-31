@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import * as axios from "axios"
+
 class HelloWorld extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,10 @@ class HelloWorld extends React.Component {
   }
 
   click() {
-    this.setState({count: this.state.count + 1})
+    axios('/posts.json')
+      .then((response) => {
+        this.setState({count: response.data.length })
+      });
   }
 
   render() {
