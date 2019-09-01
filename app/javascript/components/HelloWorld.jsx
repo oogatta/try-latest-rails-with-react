@@ -7,11 +7,9 @@ import Shibuya from "./Shibuya";
 const HelloWorld = (props) => {
   const [count, setCount] = React.useState(0);
 
-  const click = () => {
-    axios('/posts.json')
-      .then((response) => {
-        setCount(response.data.length)
-      });
+  const click = async () => {
+    const response = await axios('/posts.json');
+    setCount(response.data.length)
   };
 
   return <div>
