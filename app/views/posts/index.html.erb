@@ -33,3 +33,11 @@
 <% end %>
 
 <%= link_to 'New Post', new_post_path %>
+
+<h3>user</h3>
+<p><%= current_user %></p>
+<p>user_signed_in?: <%= user_signed_in? %></p>
+
+<h3>admin</h3>
+<p><%= current_admin %></p>
+<p>admin_signed_in?: <%= admin_signed_in? %></p>
